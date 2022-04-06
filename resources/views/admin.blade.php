@@ -20,7 +20,7 @@
 							Last seen
 						</h3>
 						<p>
-							@if ($team->scans->sortByDesc('location_team.created_at')->first()) {{$team->scans->sortByDesc('location_team.created_at')->first()->name}} at {{$team->scans->sortByDesc('location_team.created_at')->first()->location_team.created_at}} @endif
+							@if ($team->scans->sortByDesc('location_team.created_at')->first()) {{$team->scans->sortByDesc('location_team.created_at')->first()->name}} at {{$team->scans->sortByDesc('location_team.created_at')->first()->created_at}} @endif
 						</p>
 						<h3 class="py-2 font-black text-2xl">
 							Joe's car
