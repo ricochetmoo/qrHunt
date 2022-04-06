@@ -8,17 +8,17 @@ use App\Models\Location;
 
 class LocationController extends Controller
 {
-	public function index()
+	public static function index()
 	{
 		return Location::all();
 	}
 
-	public function count()
+	public static function count()
 	{
 		return Location::all()->count();
 	}
 
-	public function create(Request $request)
+	public static function create(Request $request)
 	{
 		$request->validate
 		([
@@ -32,31 +32,37 @@ class LocationController extends Controller
 		return redirect('/admin/location');
 	}
 
-	public function scan($code)
+	public static function scan(Request $request, $code)
 	{
-		$location = Location::where('code', $code);
-		$team = TeamController::findOne(session('team'));
+		if (!$location = Location::where('code', $code)->first())
+		{
+			die('fake');
+		}
 
-		$location->visits()->attach($team);
+		$team = TeamController::findOne($request->session()->get('team'));
+
+		$location->visits()->attach([$team->id]);
 
 		if ($location == $team->next)
 		{
 			if (($location->id + 1) % (LocationController::count() + 1) == 0)
 			{
-				$team->next = 1;
+				$team->next_location_id = 1;
 			}
 			else
 			{
-				$team->next = ($location->id + 1) % (LocationController::count() + 1);
+				$team->next_location_id = ($location->id + 1) % (LocationController::count() + 1);
 			}
 
-			if($team->next == $team->start)
+			$team->save();
+
+			if($team->next_location_id == $team->start->id)
 			{
 				die('finished');
 			}
 			else
 			{
-				die('next ' . $team->next->id);
+				die('next ' . $team->next_location_id);
 			}
 		}
 		else

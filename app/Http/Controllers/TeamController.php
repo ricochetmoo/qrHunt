@@ -8,17 +8,17 @@ use App\Models\Team;
 
 class TeamController extends Controller
 {
-	public function index()
+	public static function index()
 	{
 		return Team::all();
 	}
 
-	public function findOne($query)
+	public static function findOne($id)
 	{
-		return Team::find($query);
+		return Team::find($id);
 	}
 
-	public function create(Request $request)
+	public static function create(Request $request)
 	{
 		$request->validate
 		([
@@ -45,7 +45,7 @@ class TeamController extends Controller
 		return redirect('/admin/team');
 	}
 
-	public function choose($teamId)
+	public static function choose($teamId)
 	{
 		session(['team' => $teamId]);
 
