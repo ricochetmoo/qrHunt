@@ -13,7 +13,8 @@ class Team extends Model
 	[
 		'name',
 		'start_location_id',
-		'next_location_id'
+		'next_location_id',
+		'joes_car'
 	];
 
 	public function scans()

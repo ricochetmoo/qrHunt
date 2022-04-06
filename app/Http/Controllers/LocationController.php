@@ -34,6 +34,15 @@ class LocationController extends Controller
 
 	public static function scan(Request $request, $code)
 	{
+		if ($code == "93247")
+		{
+			$team = TeamController::findOne($request->session()->get('team'));
+			$team->joes_car = true;
+			$team->save();
+
+			return redirect()->back()->withErrors(['msg' => 'Congrats on finding Joe\'s car!']);
+		}
+		
 		if (!$location = Location::where('code', $code)->first())
 		{
 			return redirect()->back()->withErrors(['msg' => 'This location does not exist']);

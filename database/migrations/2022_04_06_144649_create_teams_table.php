@@ -18,6 +18,7 @@ class CreateTeamsTable extends Migration
             $table->string('name');
             $table->integer('start_location_id');
             $table->integer('next_location_id');
+            $table->boolean('joes_car')->default('0');
             $table->timestamps();
         });
     }
