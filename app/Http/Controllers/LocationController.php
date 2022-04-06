@@ -36,7 +36,7 @@ class LocationController extends Controller
 	{
 		if (!$location = Location::where('code', $code)->first())
 		{
-			die('fake');
+			return redirect()->back()->withErrors(['msg' => 'This location does not exist']);
 		}
 
 		$team = TeamController::findOne($request->session()->get('team'));
@@ -58,16 +58,16 @@ class LocationController extends Controller
 
 			if($team->next_location_id == $team->start->id)
 			{
-				die('finished');
+				return redirect()->back()->withErrors(['msg' => 'You\'re finished! All that\'s left is to find Joe\'s car if you haven\'t already!']);
 			}
 			else
 			{
-				die('next ' . $team->next_location_id);
+				return redirect()->back()->withErrors(['msg' => 'Nice work, time to find your next one!']);
 			}
 		}
 		else
 		{
-			die('not valid');
+			return redirect()->back()->withErrors(['msg' => 'That was not your next QR code!']);
 		}
 	}
 }
