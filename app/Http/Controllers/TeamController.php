@@ -30,15 +30,7 @@ class TeamController extends Controller
 
 		$team->name = $request->name;
 		$team->start_location_id = $request->start_location_id;
-
-		if (($request->start_location_id + 1) % (LocationController::count() + 1) == 0)
-		{
-			$team->next_location_id = 1;
-		}
-		else
-		{
-			$team->next_location_id = ($request->start_location_id + 1) % (LocationController::count() + 1);
-		}
+		$team->next_location_id = $request->start_location_id;
 
 		$team->save();
 
