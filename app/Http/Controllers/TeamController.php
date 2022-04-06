@@ -13,6 +13,11 @@ class TeamController extends Controller
 		return Team::all();
 	}
 
+	public function findOne($query)
+	{
+		return Team::find($query);
+	}
+
 	public function create(Request $request)
 	{
 		$request->validate

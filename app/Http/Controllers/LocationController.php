@@ -34,6 +34,34 @@ class LocationController extends Controller
 
 	public function scan($code)
 	{
-		$location = Location::find($code);
+		$location = Location::where('code', $code);
+		$team = TeamController::findOne(session('team'));
+
+		$location->visits()->attach($team);
+
+		if ($location == $team->next)
+		{
+			if (($location->id + 1) % (LocationController::count() + 1) == 0)
+			{
+				$team->next = 1;
+			}
+			else
+			{
+				$team->next = ($location->id + 1) % (LocationController::count() + 1);
+			}
+
+			if($team->next == $team->start)
+			{
+				die('finished');
+			}
+			else
+			{
+				die('next ' . $team->next->id);
+			}
+		}
+		else
+		{
+			die('not valid');
+		}
 	}
 }
