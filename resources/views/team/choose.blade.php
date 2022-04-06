@@ -29,7 +29,9 @@ if (Session::has('team'))
                     <h1 class="font-black text-5xl text-black">Choose your Team</h1>
 					<div class="mt-4 max-w-md">
 						@foreach ($teams as $team)
-							<a href="team/{{$team->id}}">{{$team->name}}</a>
+							<div class="block my-3">
+								<a class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded inline-block" href="/team/{{$team->id}}">{{$team->name}}</a>
+							</div>
 						@endforeach
 					</div>
                 </div>
