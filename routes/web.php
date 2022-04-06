@@ -16,9 +16,9 @@ use App\Http\Controllers\TeamController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', function() {return view('team.choose')->with('teams', TeamController::index());});
+
+Route::get('/team/{id}', [TeamController::class, 'choose']);
 
 Route::get('/admin/team', function() {return view('team.create')->with('locations', LocationController::index());});
 Route::post('/admin/team', [TeamController::class, 'create']);

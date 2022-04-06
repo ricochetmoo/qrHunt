@@ -39,4 +39,11 @@ class TeamController extends Controller
 
 		return redirect('/admin/team');
 	}
+
+	public function choose($teamId)
+	{
+		session(['team' => $teamId]);
+
+		return redirect('/scanner');
+	}
 }

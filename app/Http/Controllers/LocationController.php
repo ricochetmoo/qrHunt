@@ -31,4 +31,9 @@ class LocationController extends Controller
 
 		return redirect('/admin/location');
 	}
+
+	public function scan($code)
+	{
+		$location = Location::find($code);
+	}
 }
