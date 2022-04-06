@@ -20,6 +20,7 @@ Route::get('/', function() {return view('team.choose')->with('teams', TeamContro
 
 Route::get('/team/{id}', [TeamController::class, 'choose']);
 Route::get('/scan/{code}', [LocationController::class, 'scan']);
+Route::get('/scan', function() {return redirect('/scanner');});
 Route::get('/scanner', function() {return view('scanner');});
 Route::get('/admin', function() {return view('admin')->with('teams', TeamController::index());});
 
