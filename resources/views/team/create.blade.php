@@ -26,8 +26,8 @@
 							<label class="font-semibold" for="name">Name</label>
 							<input value="{{old('name')}}" id="name" name="name" type="text" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition" />
 
-							<label class="font-semibold" for="startLocation">Start Location</label>
-							<select value="{{old('name')}}" id="name" name="name" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition">
+							<label class="font-semibold" for="start_location_id">Start Location</label>
+							<select value="{{old('start_location_id')}}" id="start_location_id" name="start_location_id" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition">
 								@foreach ($locations as $location)
 								<option value="{{$location->id}}">{{$location->name}}</option>
 								@endforeach

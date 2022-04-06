@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\TeamController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +21,4 @@ Route::get('/', function () {
 });
 
 Route::get('/admin/team', function() {return view('team.create')->with('locations', LocationController::index());});
+Route::post('/admin/team', [TeamController::class, 'create']);
