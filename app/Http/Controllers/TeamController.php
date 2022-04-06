@@ -15,6 +15,12 @@ class TeamController extends Controller
 
 	public function create(Request $request)
 	{
+		$request->validate
+		([
+			'name' => ['string', 'required'],
+			'start_location_id' => ['integer', 'required'],
+		]);
+
 		$team = new Team();
 
 		$team->name = $request->name;
