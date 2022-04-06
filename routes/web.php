@@ -21,6 +21,7 @@ Route::get('/', function() {return view('team.choose')->with('teams', TeamContro
 Route::get('/team/{id}', [TeamController::class, 'choose']);
 Route::get('/scan/{code}', [LocationController::class, 'scan']);
 Route::get('/scanner', function() {return view('scanner');});
+Route::get('/admin', function() {return view('admin')->with('teams', TeamController::index());});
 
 Route::get('/admin/team', function() {return view('team.create')->with('locations', LocationController::index());});
 Route::post('/admin/team', [TeamController::class, 'create']);
