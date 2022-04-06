@@ -67,7 +67,7 @@ class LocationController extends Controller
 
 			if($team->next_location_id == $team->start->id)
 			{
-				return redirect()->back()->withErrors(['msg' => 'You\'re finished! All that\'s left is to find Joe\'s car if you haven\'t already!']);
+				return redirect()->back()->withErrors(['msg' => 'CALL JOE! You\'re finished! All that\'s left is to find Joe\'s car if you haven\'t already!']);
 			}
 			else
 			{
