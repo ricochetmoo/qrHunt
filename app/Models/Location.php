@@ -7,17 +7,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Location extends Model
 {
-    use HasFactory;
+	use HasFactory;
 
-    protected $fillable =
-    [
-        'name',
-        'code',
-        'hint'
-    ];
+	protected $fillable =
+	[
+		'name',
+		'code',
+		'hint'
+	];
 
-    public function visits()
-    {
-        $this->belongsToMany(Team::class);
-    }
+	public function visits()
+	{
+		return $this->belongsToMany(Team::class);
+	}
 }
