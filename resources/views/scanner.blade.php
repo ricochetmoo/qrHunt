@@ -43,15 +43,15 @@ $team = TeamController::findOne(Session::get('team'));
         </div>
     </div>
 
+	<script>
+		window.onload = function()
+		{
+			document.getElementById("manualEntry").addEventListener('submit', (event) => {event.preventDefault(); window.location.href = 'scan/' + document.querySelector('#manualCode').value;})
+		}
+	</script>
 	<script type="module">
 		import QrScanner from '/js/qr-scanner.min.js';
 		const qrScanner = new QrScanner(document.getElementById('scanner'), result => window.location.href='scan/' + result);
 		qrScanner.start();
-	</script>
-	<script>
-		window.onload = () => 
-		{
-			document.getElementById("manualEntry").addEventListener('sumbit', (event) => {event.preventDefault();window.location.href = 'scan/' + document.querySelector('#manualCode').value;})
-		}
 	</script>
 </x-app-layout>
