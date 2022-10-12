@@ -32,6 +32,12 @@ $team = TeamController::findOne(Session::get('team'));
 					</h2>
 
                     <video id="scanner"></video>
+
+					<form id="manualEntry">
+						<label class="font-semibold" for="name">Manual Entry</label>
+						<input value="" id="name" name="name" type="text" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition" id="manualCode" />
+						<button class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded" role="submit">Submit</button>
+					</form>
                 </div>
             </div>
         </div>
@@ -41,5 +47,8 @@ $team = TeamController::findOne(Session::get('team'));
 		import QrScanner from '/js/qr-scanner.min.js';
 		const qrScanner = new QrScanner(document.getElementById('scanner'), result => window.location.href='scan/' + result);
 		qrScanner.start();
+	</script>
+	<script type="text/javascript">
+		document.querySelector("#manualEntry").addEventListener('sumbit', (e) => {e.preventDefault();window.location.href = 'scan/' + document.querySelector('#manualCode').value;})
 	</script>
 </x-app-layout>
