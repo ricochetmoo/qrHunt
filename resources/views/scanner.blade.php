@@ -22,6 +22,7 @@ $team = TeamController::findOne(Session::get('team'));
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
+					<a class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded" href="https://www.google.com/maps/d/u/0/edit?mid=1JcSynNal3-WM5WAkSa9_zg_kIUSiwp4&usp=sharing" target="_blank">Boundaries</a>
 					@if ($errors->any)
 					<div class="rounded block my-3 p-4 bg-red-100">{{$errors->first()}}</div>
 					@endif
