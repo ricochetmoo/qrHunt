@@ -12,7 +12,7 @@ $team = TeamController::findOne(Session::get('team'));
 <x-app-layout>
 	<x-slot name="header">
 	<div class="inline-block grow">
-			<h2 class="py-2 font-black text-3xl font-serif">
+			<h2 class="py-2 font-black text-3xl font-display">
 				{{ config('app.name', 'Laravel') }}
 			</h2>
 		</div>
@@ -35,7 +35,7 @@ $team = TeamController::findOne(Session::get('team'));
                     <video id="scanner"></video>
 
 					<form id="manualEntry">
-						<label class="font-semibold font-serif" for="name">Manual Entry</label>
+						<label class="font-semibold font-display" for="name">Manual Entry</label>
 						<input type="text" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition" id="manualCode" />
 						<button class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded" role="submit">Submit</button>
 					</form>

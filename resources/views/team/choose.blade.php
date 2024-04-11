@@ -9,7 +9,7 @@ if (Session::has('team'))
 <x-app-layout>
 	<x-slot name="header">
 	<div class="inline-block grow">
-			<h2 class="py-2 font-black font-serif text-3xl">
+			<h2 class="py-2 font-black font-display text-3xl">
 				QR Code Hunt
 			</h2>
 		</div>
@@ -26,11 +26,11 @@ if (Session::has('team'))
 						@endforeach
 					@endif
 
-                    <h1 class="font-black text-5xl font-serif text-black">Choose your Team</h1>
+                    <h1 class="font-black text-5xl font-display text-black">Choose your Team</h1>
 					<div class="mt-4 max-w-md">
 						@foreach ($teams as $team)
 							<div class="block my-3">
-								<a class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded inline-block font-serif" href="/team/{{$team->id}}">{{$team->name}}</a>
+								<a class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded inline-block font-display" href="/team/{{$team->id}}">{{$team->name}}</a>
 							</div>
 						@endforeach
 					</div>
