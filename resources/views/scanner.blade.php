@@ -37,7 +37,7 @@ $team = TeamController::findOne(Session::get('team'));
 					<form id="manualEntry">
 						<label class="font-semibold font-serif" for="name">Manual Entry</label>
 						<input type="text" class="mt-2 mb-3 block w-full rounded bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 transition" id="manualCode" />
-						<button class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded" role="submit">Submit</button>
+						<button class="mt-4 bg-scout-purple hover:bg-gray-100 text-white hover:text-scout-purple transition font-extrabold py-2 px-4 rounded font-serif" role="submit">Submit</button>
 					</form>
                 </div>
             </div>
