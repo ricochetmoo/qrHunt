@@ -10,7 +10,7 @@ if (Session::has('team'))
 	<x-slot name="header">
 	<div class="inline-block grow">
 			<h2 class="py-2 font-black font-display text-3xl">
-				QR Code Hunt
+				{{ config('app.name', 'Laravel') }}
 			</h2>
 		</div>
 	</x-slot>
