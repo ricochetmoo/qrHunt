@@ -19,6 +19,8 @@
         <style>
             body {
                 font-family: 'Nunito', sans-serif;
+                font-family: 'Aleo', sans-serif;
+                font-family: 'Cabin', sans-serif;
             }
         </style>
     </head>
