@@ -6,12 +6,12 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'sans': ['"Nunito Sans"', 'sans-serif'],
-      'display': ['"Nunito Sans"', 'serif']
+      'sans': ['"Aleo"', 'sans-serif'],
+      'display': ['"Cabin"', 'serif']
     },
     extend: {
       colors: {
-        'scout-purple': '#7413dc',
+        'scout-purple': '#00A4F2',
       }
     }
   },
