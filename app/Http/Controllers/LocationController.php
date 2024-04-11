@@ -40,7 +40,7 @@ class LocationController extends Controller
 			$team->joes_car = true;
 			$team->save();
 
-			return redirect()->back()->withErrors(['msg' => 'Congrats on finding Joe\'s car!']);
+			return redirect()->back()->withErrors(['msg' => 'Congrats on catching Camila!']);
 		}
 		
 		if (!$location = Location::where('code', $code)->first())
