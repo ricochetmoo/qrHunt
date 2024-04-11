@@ -22,12 +22,12 @@
 						<p>
 							@if ($team->scans->sortByDesc('location_team.created_at')->first()) {{$team->scans->sortByDesc('location_team.created_at')->first()->name}} at {{$team->scans->sortByDesc('location_team.created_at')->first()->created_at}} @endif
 						</p>
-						<h3 class="py-2 font-black text-2xl">
+						<!-- <h3 class="py-2 font-black text-2xl">
 							Joe's car
 						</h3>
 						<p>
 							{{$team->joes_car}}
-						</p>
+						</p> -->
 						<h3 class="py-2 font-black text-2xl">
 							Next scan
 						</h3>
