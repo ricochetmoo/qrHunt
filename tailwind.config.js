@@ -7,7 +7,7 @@ module.exports = {
   theme: {
     fontFamily: {
       'sans': ['"Aleo"', 'sans-serif'],
-      'display': ['"Cabin"', 'serif']
+      'serif': ['"Cabin"', 'serif']
     },
     extend: {
       colors: {
